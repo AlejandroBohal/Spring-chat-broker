@@ -38,11 +38,10 @@ public class ChatController {
     public String isWriting(String username){
         return username + (" está escribiendo...");
     }
-    @MessageMapping("/history")
 
+    @MessageMapping("/history")
     public void history(String clienteId){
         webSocket.convertAndSend("/chat/history/"+clienteId,chatService.getLast10());
-
     }
 
 
